@@ -1,4 +1,4 @@
-@extends('blogs.layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -33,7 +33,7 @@
             <td>{{ $blog->details }}</td>
             <td>
                 <form action="{{ route('blogs.destroy',$blog->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('blogs.show',$blog->id) }}">Show</a>
+                    <a class="btn btn-secondary" href="{{ route('blogs.show',$blog->id) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('blogs.edit',$blog->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
